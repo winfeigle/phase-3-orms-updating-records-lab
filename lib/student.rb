@@ -30,14 +30,14 @@ class Student
     student.save
     student
   end
-
+  
   def self.drop_table
     sql = <<-SQL
-      DROP TABLE IF EXISTS students
+    DROP TABLE IF EXISTS students
     SQL
     DB[:conn].execute(sql)
   end
-
+  
   def self.new_from_db(row)
     id = row[0]
     name = row[1]
